@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Blog - BlogSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/create-blog.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Blog<span>Sphere</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-blog.html" class="active">Write</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth"></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="write-wrap">
+        <div class="write-header fade-in-up">
+            <h1 id="pageTitle">Write a New Blog</h1>
+            <p>Share your knowledge and stories with the community</p>
+        </div>
+
+        <form id="blogForm" class="write-form fade-in-up">
+            <input type="hidden" id="blogId">
+
+            <div class="form-group">
+                <label>Blog Title</label>
+                <input type="text" id="title" placeholder="Enter an eye-catching title..." required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Food">Food</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Blog Image</label>
+                    <input type="file" id="imageFile" accept="image/*">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Short Description</label>
+                <textarea id="description" rows="2" placeholder="A short summary that appears on the blog card..."
+                    required maxlength="200"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Content</label>
+                <div class="editor-toolbar">
+                    <button type="button" data-cmd="bold"><b>B</b></button>
+                    <button type="button" data-cmd="italic"><i>I</i></button>
+                    <button type="button" data-cmd="insertUnorderedList">• List</button>
+                    <button type="button" data-cmd="formatBlock" data-val="H3">H3</button>
+                    <button type="button" data-cmd="formatBlock" data-val="BLOCKQUOTE">" Quote</button>
+                </div>
+                <div id="contentEditor" class="content-editor" contenteditable="true"
+                    placeholder="Start writing your story..."></div>
+            </div>
+
+            <div class="form-group">
+                <label>Tags (comma separated)</label>
+                <input type="text" id="tags" placeholder="webdev, javascript, career">
+            </div>
+
+            <div class="write-actions">
+                <a href="dashboard.html" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary" id="publishBtn">
+                    <span class="btn-text">Publish Blog</span>
+                    <span class="btn-spinner"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/create-blog.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Blog - BlogSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/create-blog.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Blog<span>Sphere</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-blog.html" class="active">Write</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth"></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="write-wrap">
+        <div class="write-header fade-in-up">
+            <h1 id="pageTitle">Write a New Blog</h1>
+            <p>Share your knowledge and stories with the community</p>
+        </div>
+
+        <form id="blogForm" class="write-form fade-in-up">
+            <input type="hidden" id="blogId">
+
+            <div class="form-group">
+                <label>Blog Title</label>
+                <input type="text" id="title" placeholder="Enter an eye-catching title..." required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Food">Food</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cover Image URL</label>
+                    <input type="url" id="coverImage" placeholder="https://images.unsplash.com/...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Short Description</label>
+                <textarea id="description" rows="2" placeholder="A short summary that appears on the blog card..."
+                    required maxlength="200"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Content</label>
+                <div class="editor-toolbar">
+                    <button type="button" data-cmd="bold"><b>B</b></button>
+                    <button type="button" data-cmd="italic"><i>I</i></button>
+                    <button type="button" data-cmd="insertUnorderedList">• List</button>
+                    <button type="button" data-cmd="formatBlock" data-val="H3">H3</button>
+                    <button type="button" data-cmd="formatBlock" data-val="BLOCKQUOTE">" Quote</button>
+                </div>
+                <div id="contentEditor" class="content-editor" contenteditable="true"
+                    placeholder="Start writing your story..."></div>
+            </div>
+
+            <div class="form-group">
+                <label>Tags (comma separated)</label>
+                <input type="text" id="tags" placeholder="webdev, javascript, career">
+            </div>
+
+            <div class="write-actions">
+                <a href="dashboard.html" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary" id="publishBtn">
+                    <span class="btn-text">Publish Blog</span>
+                    <span class="btn-spinner"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/create-blog.js"></script>
+</body>
+
+</html> -->

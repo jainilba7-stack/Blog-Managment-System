@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere - Share Your Stories</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Blog<span>Sphere</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-blog.html">Write</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+        </div>
+        <div class="hero-content fade-in-up">
+            <span class="hero-badge">✨ Welcome to the community</span>
+            <h1>Write. Share. <span class="gradient-text">Inspire.</span></h1>
+            <p>A place where your ideas find a voice. Discover stories, thinking, and expertise from writers on any
+                topic that matters to you.</p>
+            <div class="hero-cta">
+                <a href="register.html" class="btn btn-primary btn-lg">Start Writing <i class="arrow">→</i></a>
+                <a href="#latest-blogs" class="btn btn-ghost btn-lg">Explore Blogs</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3 id="statBlogs">0</h3>
+                    <p>Blogs Published</p>
+                </div>
+                <div class="stat">
+                    <h3 id="statWriters">0</h3>
+                    <p>Active Writers</p>
+                </div>
+                <div class="stat">
+                    <h3 id="statReads">0</h3>
+                    <p>Total Reads</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="latest-blogs" id="latest-blogs">
+        <div class="section-header fade-in-up">
+            <span class="section-tag">Fresh Content</span>
+            <h2>Latest Stories</h2>
+            <p>Hand-picked articles from our growing community of writers</p>
+        </div>
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search blogs by title, tag, or author...">
+                <button id="searchBtn">🔍</button>
+            </div>
+            <div class="filter-chips" id="categoryFilters">
+                <button class="chip active" data-category="all">All</button>
+                <button class="chip" data-category="Technology">Technology</button>
+                <button class="chip" data-category="Lifestyle">Lifestyle</button>
+                <button class="chip" data-category="Travel">Travel</button>
+                <button class="chip" data-category="Food">Food</button>
+                <button class="chip" data-category="Education">Education</button>
+            </div>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog cards injected by JS -->
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+
+        <div class="load-more-wrap">
+            <button class="btn btn-outline" id="loadMoreBtn">Load More Stories</button>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-box fade-in-up">
+            <h2>Never miss a story</h2>
+            <p>Get the best of BlogSphere, curated weekly, delivered straight to your inbox.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="you@example.com" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Blog<span>Sphere</span></h3>
+                <p>Empowering voices, one story at a time.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="create-blog.html">Write a Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BlogSphere. Built as part of an internship project.</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
